@@ -37,6 +37,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3305EBF520D1776C0005F750 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3323729420D03AFC00024671 /* Assets.xcassets */,
+				3323728D20D03AFA00024671 /* AppDelegate.swift */,
+				3323729620D03AFC00024671 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		3323728120D03AFA00024671 = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +66,11 @@
 		3323728C20D03AFA00024671 /* SeeFood */ = {
 			isa = PBXGroup;
 			children = (
-				3323728D20D03AFA00024671 /* AppDelegate.swift */,
 				3323728F20D03AFA00024671 /* ViewController.swift */,
 				3323729120D03AFA00024671 /* Main.storyboard */,
-				3323729420D03AFC00024671 /* Assets.xcassets */,
-				3323729620D03AFC00024671 /* LaunchScreen.storyboard */,
 				3323729920D03AFC00024671 /* Info.plist */,
 				3323729F20D03B1F00024671 /* Inceptionv3.mlmodel */,
+				3305EBF520D1776C0005F750 /* Supporting Files */,
 			);
 			path = SeeFood;
 			sourceTree = "<group>";
@@ -287,6 +295,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7N7R2P8E43;
 				INFOPLIST_FILE = SeeFood/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,6 +314,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7N7R2P8E43;
 				INFOPLIST_FILE = SeeFood/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
