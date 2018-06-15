@@ -1,4 +1,4 @@
-//: Playground - noun: a place where people can play
+//: Playground - to understand closures
 
 import UIKit
 
