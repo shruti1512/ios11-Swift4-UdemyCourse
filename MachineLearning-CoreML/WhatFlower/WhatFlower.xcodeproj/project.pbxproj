@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3306A2F020D425C9003BE85D /* FlowerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3306A2EF20D425C9003BE85D /* FlowerData.swift */; };
 		3378E54F20D2DE710092C207 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3378E54E20D2DE710092C207 /* AppDelegate.swift */; };
 		3378E55120D2DE710092C207 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3378E55020D2DE710092C207 /* ViewController.swift */; };
 		3378E55420D2DE710092C207 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3378E55220D2DE710092C207 /* Main.storyboard */; };
 		3378E55620D2DE730092C207 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3378E55520D2DE730092C207 /* Assets.xcassets */; };
 		3378E55920D2DE730092C207 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3378E55720D2DE730092C207 /* LaunchScreen.storyboard */; };
+		33878BB420D3116B004F66F2 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33878BB320D3116B004F66F2 /* DataService.swift */; };
+		33EB3C7220D454F1000F11BD /* ImageDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EB3C7120D454F1000F11BD /* ImageDetection.swift */; };
 		FDBC8DF875BDD90362B7494E /* Pods_WhatFlower.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7B1157986FFDA7519DE5CC /* Pods_WhatFlower.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3306A2EF20D425C9003BE85D /* FlowerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerData.swift; sourceTree = "<group>"; };
 		3378E54B20D2DE710092C207 /* WhatFlower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatFlower.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3378E54E20D2DE710092C207 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3378E55020D2DE710092C207 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -23,6 +27,8 @@
 		3378E55520D2DE730092C207 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3378E55820D2DE730092C207 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3378E55A20D2DE730092C207 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33878BB320D3116B004F66F2 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		33EB3C7120D454F1000F11BD /* ImageDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetection.swift; sourceTree = "<group>"; };
 		6C808396A8186F284847A64F /* Pods-WhatFlower.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatFlower.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhatFlower/Pods-WhatFlower.debug.xcconfig"; sourceTree = "<group>"; };
 		BC8E1EEB95C33F153FD08893 /* Pods-WhatFlower.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatFlower.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhatFlower/Pods-WhatFlower.release.xcconfig"; sourceTree = "<group>"; };
 		CB7B1157986FFDA7519DE5CC /* Pods_WhatFlower.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatFlower.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +63,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3306A2F120D425CE003BE85D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3306A2EF20D425C9003BE85D /* FlowerData.swift */,
+				33EB3C7120D454F1000F11BD /* ImageDetection.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3306A2F220D425D3003BE85D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3378E55020D2DE710092C207 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3306A2F320D425DA003BE85D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				33878BB320D3116B004F66F2 /* DataService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		3378E54220D2DE710092C207 = {
 			isa = PBXGroup;
 			children = (
@@ -78,7 +109,9 @@
 		3378E54D20D2DE710092C207 /* WhatFlower */ = {
 			isa = PBXGroup;
 			children = (
-				3378E55020D2DE710092C207 /* ViewController.swift */,
+				3306A2F320D425DA003BE85D /* Service */,
+				3306A2F120D425CE003BE85D /* Model */,
+				3306A2F220D425D3003BE85D /* Controller */,
 				3378E55220D2DE710092C207 /* Main.storyboard */,
 				3378E55A20D2DE730092C207 /* Info.plist */,
 				3378E56220D2DFDA0092C207 /* Supporting Files */,
@@ -173,11 +206,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WhatFlower/Pods-WhatFlower-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,8 +245,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3306A2F020D425C9003BE85D /* FlowerData.swift in Sources */,
 				3378E55120D2DE710092C207 /* ViewController.swift in Sources */,
 				3378E54F20D2DE710092C207 /* AppDelegate.swift in Sources */,
+				33878BB420D3116B004F66F2 /* DataService.swift in Sources */,
+				33EB3C7220D454F1000F11BD /* ImageDetection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

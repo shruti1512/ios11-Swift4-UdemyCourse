@@ -7,15 +7,13 @@
 //
 
 import UIKit
-import CoreML
-import Vision
-import Alamofire
-import SwiftyJSON
+import SDWebImage
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     let imagePicker = UIImagePickerController()
+    @IBOutlet weak var descriptionLbl: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,34 +24,6 @@ class ViewController: UIViewController {
 
     @IBAction func cameraBtnTapped(_ sender: Any) {
         present(imagePicker, animated: true, completion: nil)
-    }
-    
-    func detect(image: CIImage) {
-        
-        //1. Load CoreMl Model using VNCoreMLModel
-        guard let vnCoreMlModel = try? VNCoreMLModel(for: FlowerClassifier().model) else {
-            fatalError("Unable to load coreml model")
-        }
-        
-        //2. Create VNCoreMLRequest to classify image
-        let request = VNCoreMLRequest(model: vnCoreMlModel) { (request, error) in
-            guard let results = request.results as? [VNClassificationObservation] else {
-                fatalError("Request could not be processed")
-            }
-            
-            if let firstResult = results.first {
-                self.navigationItem.title = firstResult.identifier.capitalized
-            }
-        }
-        //3. Create VNImageRequestHandler to process the VNCoreMLRequest request for image
-        let requestHandler = VNImageRequestHandler(ciImage: image)
-        do {
-            try requestHandler.perform([request])
-        }
-        catch {
-            print(error.localizedDescription)
-        }
-        
     }
     
 }
@@ -68,15 +38,17 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
             fatalError("Could not capture image.")
         }
         
-        imageView.image = capturedImage
-        
         guard let convertedCIImage = CIImage(image: capturedImage) else {
             fatalError("Unable to covert image to CIImage object")
         }
         
-        detect(image: convertedCIImage)
-        
-        
+        let imageDetection = ImageDetection()
+        imageDetection.detect(image: convertedCIImage) { (name, description, imageURLString) in
+            weak var weakSelf = self
+            weakSelf?.navigationItem.title = name.capitalized
+            weakSelf?.descriptionLbl.text = description
+            weakSelf?.imageView.sd_setImage(with: URL(string:imageURLString), completed: nil)
+        }
     }
     
     

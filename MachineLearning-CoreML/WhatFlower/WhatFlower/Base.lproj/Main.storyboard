@@ -18,15 +18,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pMP-fb-NUL">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pMP-fb-NUL">
+                                <rect key="frame" x="0.0" y="64" width="375" height="396"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="VVO-o3-wL1">
+                                <rect key="frame" x="8" y="468" width="359" height="191"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VVO-o3-wL1" secondAttribute="bottom" constant="8" id="8d3-3Q-zLT"/>
+                            <constraint firstItem="VVO-o3-wL1" firstAttribute="top" secondItem="pMP-fb-NUL" secondAttribute="bottom" constant="8" id="8o4-aw-29a"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VVO-o3-wL1" secondAttribute="trailing" constant="8" id="9qx-KU-OLU"/>
+                            <constraint firstItem="VVO-o3-wL1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="HBB-fQ-xbk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pMP-fb-NUL" secondAttribute="trailing" id="N9v-fu-DZu"/>
                             <constraint firstItem="pMP-fb-NUL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="S2E-DR-EPi"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pMP-fb-NUL" secondAttribute="bottom" id="h4P-KQ-se5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pMP-fb-NUL" secondAttribute="bottom" constant="207" id="h4P-KQ-se5"/>
                             <constraint firstItem="pMP-fb-NUL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="kkc-xN-Esw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -39,12 +49,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="descriptionLbl" destination="VVO-o3-wL1" id="xWc-a7-PvF"/>
                         <outlet property="imageView" destination="pMP-fb-NUL" id="QGS-ij-Fpv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1020" y="-564"/>
+            <point key="canvasLocation" x="1020" y="-564.46776611694156"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xNO-R1-9P2">
