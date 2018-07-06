@@ -1,0 +1,11 @@
+platform :ios, '9.0'
+
+target 'WeatherForecast' do
+  use_frameworks!
+
+  # Pods for WeatherForecast
+    pod 'Alamofire'
+    pod 'SwiftyJSON'
+
+
+end
